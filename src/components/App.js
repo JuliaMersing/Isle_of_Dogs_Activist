@@ -24,7 +24,7 @@ const App = () => {
           <Login />
         </Route>
         <Route path="/users">
-          <UserList Users={users} />
+          <UserList users={users} />
         </Route>
       </Switch>
     </div>
