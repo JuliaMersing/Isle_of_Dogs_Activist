@@ -1,0 +1,17 @@
+@import "../core/mixing.scss";
+@import "../core/_reset.scss";
+
+.cards {
+  display: grid;
+  grid-column: 1fr;
+  column-gap: 0.63rem;
+  row-gap: 0.63rem;
+  margin-top: 1em;
+  justify-content: center;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
