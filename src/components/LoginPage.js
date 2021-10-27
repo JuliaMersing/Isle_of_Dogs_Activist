@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ls from "./LogalStorage";
 import "../stylesheet/app.scss";
 
 const Login = () => {
@@ -14,9 +15,8 @@ const Login = () => {
       },
       body: JSON.stringify(data),
     }).then((resp) => {
-      resp.json().then((result) => {
-        console.log("result", result);
-      });
+      resp.json().then((resultAccess) => {
+          ls.set("resultAccess", resultAccess);
     });
   }
   return (
