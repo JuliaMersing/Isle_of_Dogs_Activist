@@ -5,17 +5,20 @@ const url = "http://51.38.51.187:5050/api/v1/users";
 const getApiData = () => {
   //Recuperar el codigo de autentificacion guardado en login
   const token = ls.get("token");
-  const parseToken = JSON.parse(token);
 
   return fetch(url, {
     method: "GET",
     credentials: "include",
     headers: {
-      Authorization: `Bearer access${token}`,
-      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authentication: "Bearer Token",
+      "X-Custom-Header": token.accessToken,
     },
   })
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
     .then((data) => {
       const cleanData = data.results.map((user) => {
         return {
@@ -27,7 +30,8 @@ const getApiData = () => {
         };
       });
       return cleanData;
-    });
+    })
+    .catch((error) => console.log(error));
 };
 
 export default getApiData;
