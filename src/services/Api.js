@@ -4,13 +4,13 @@ const url = "http://51.38.51.187:5050/api/v1/users";
 
 const getApiData = () => {
   //Recuperar el codigo de autentificacion guardado en login
-
   const token = ls.get("resultAccess");
+
   return fetch(url, {
     method: "GET",
     credentials: "include",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer access${token}`,
       "Content-Type": "application/json",
     },
   })
