@@ -7,22 +7,29 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const saveData = () => {
     let data = { email, password };
-    fetch("http://51.38.51.187:5050/api/v1/auth/log-in.catch", {
+    console.log(data);
+    fetch("http://51.38.51.187:5050/api/v1/auth/log-in", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((resp) => {
-      resp.json().then((resultAccess) => {
+    })
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((token) => {
         //Guardar el respultado con local storage
-        ls.set("resultAccess", resultAccess);
+        const tokenBody = JSON.stringify(token);
+        localStorage.setItem("token", tokenBody);
       });
-    });
-    return (
-      <div className="App">
-        <h1>LOGIN PAGE </h1>
+  };
+  return (
+    <div className="App">
+      <h1>LOGIN PAGE </h1>
+      <label htmlFor="email">
+        Email
         <input
           type="text"
           name="email"
@@ -31,7 +38,10 @@ const Login = () => {
             setEmail(e.target.value);
           }}
         />{" "}
-        <br /> <br />
+      </label>
+      <br /> <br />
+      <label htmlFor="password">
+        password
         <input
           type="text"
           name="password"
@@ -40,13 +50,13 @@ const Login = () => {
             setPassword(e.target.value);
           }}
         />{" "}
-        <br /> <br />
-        <button type="button" onClick={saveData}>
-          Login
-        </button>
-      </div>
-    );
-  };
+      </label>
+      <br /> <br />
+      <button type="button" onClick={saveData}>
+        Login
+      </button>
+    </div>
+  );
 };
 
 export default Login;

@@ -24,41 +24,53 @@ const SignUp = () => {
   return (
     <div className="App">
       <h1>SIGN UP </h1>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />{" "}
+      <label htmlFor="name">
+        Name
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />{" "}
+      </label>
       <br /> <br />
-      <input
-        type="text"
-        name="surname"
-        value={surname}
-        onChange={(e) => {
-          setSurname(e.target.value);
-        }}
-      />{" "}
+      <label htmlFor="surname">
+        Surname
+        <input
+          type="text"
+          name="surname"
+          value={surname}
+          onChange={(e) => {
+            setSurname(e.target.value);
+          }}
+        />
+      </label>{" "}
       <br /> <br />
-      <input
-        type="text"
-        name="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />{" "}
+      <label htmlFor="email">
+        Email
+        <input
+          type="text"
+          name="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+      </label>{" "}
       <br /> <br />
-      <input
-        type="text"
-        name="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />{" "}
+      <label htmlFor="password">
+        Pasword
+        <input
+          type="text"
+          name="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />{" "}
+      </label>
       <br /> <br />
       <button type="button" onClick={saveData}>
         Sign Up
