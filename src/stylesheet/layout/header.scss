@@ -5,11 +5,13 @@
 .header {
   display: flex;
   height: auto;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 1em;
   margin-top: 2em;
+  margin-left: 2em;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid $color-icon;
 
   &__img {
     width: 4em;

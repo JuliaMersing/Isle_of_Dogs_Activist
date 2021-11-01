@@ -8,17 +8,49 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-left: 0.5em;
+  display: flex;
+  flex-direction: column;
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    width: 30em;
+    margin: auto;
+  }
 
+  &__title {
+    color: $color-icon;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  &__paragraph {
+    color: $colot-font;
+    margin-bottom: 2em;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    background-color: $color-detail;
+    border-radius: 30%;
+    padding: 1rem;
+    border: 1px solid $color-icon;
+    color: $color-icon;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 1em;
+    font-weight: bolder;
     @include tablet {
-      flex-direction: row;
+      font-size: 0.8em;
+    }
+
+    &:hover {
+      background-color: $color-hover;
+      transform: scale(1.05);
     }
   }
 }
