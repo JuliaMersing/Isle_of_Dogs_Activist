@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../stylesheet/app.scss";
+import { Link } from "react-router-dom";
+import "../stylesheet/layout/form.scss";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -22,60 +23,68 @@ const SignUp = () => {
     });
   }
   return (
-    <div className="App">
-      <h1>SIGN UP </h1>
-      <label htmlFor="name">
-        Name
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />{" "}
-      </label>
-      <br /> <br />
-      <label htmlFor="surname">
-        Surname
-        <input
-          type="text"
-          name="surname"
-          value={surname}
-          onChange={(e) => {
-            setSurname(e.target.value);
-          }}
-        />
-      </label>{" "}
-      <br /> <br />
-      <label htmlFor="email">
-        Email
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-      </label>{" "}
-      <br /> <br />
-      <label htmlFor="password">
-        Pasword
-        <input
-          type="text"
-          name="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />{" "}
-      </label>
-      <br /> <br />
-      <button type="button" onClick={saveData}>
-        Sign Up
-      </button>
-    </div>
+    <>
+      <Link className="form__link" to="/">
+        <span className="form__icon">👈🏻</span>
+      </Link>
+      <div className="form">
+        <label htmlFor="name" className="form__label">
+          <input
+            placeholder="Name"
+            className="form__input"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />{" "}
+        </label>
+        <br /> <br />
+        <label htmlFor="surname" className="form__label">
+          <input
+            placeholder="Surname"
+            className="form__input"
+            type="text"
+            name="surname"
+            value={surname}
+            onChange={(e) => {
+              setSurname(e.target.value);
+            }}
+          />
+        </label>{" "}
+        <br /> <br />
+        <label htmlFor="email" className="form__label">
+          <input
+            placeholder="Email"
+            className="form__input"
+            type="text"
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </label>{" "}
+        <br /> <br />
+        <label htmlFor="password" className="form__label">
+          <input
+            placeholder="Pasword"
+            className="form__input"
+            type="text"
+            name="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />{" "}
+        </label>
+        <br /> <br />
+        <button className="form__button" type="button" onClick={saveData}>
+          Sign Up
+        </button>
+      </div>
+    </>
   );
 };
 export default SignUp;

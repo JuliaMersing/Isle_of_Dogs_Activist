@@ -1,0 +1,70 @@
+@import "../core/_variables.scss";
+@import "../core/mixing.scss";
+@import "../core/_reset.scss";
+
+.form {
+  color: $color-font;
+  flex-direction: column;
+  margin-top: 1em;
+
+  &__label {
+    color: $color-icon;
+    background-color: $color-background;
+
+    @include tablet {
+      font-size: 1.5em;
+    }
+  }
+
+  &__input {
+    width: 250px;
+    height: 30px;
+    color: $color-secundary;
+    border: 1px solid $color-icon;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9em;
+    @include tablet {
+      width: 250px;
+      height: 40px;
+    }
+  }
+
+  &__button {
+    background-color: $color-detail;
+    border-radius: 30%;
+    padding: 0.7em;
+    border: 1px solid $color-icon;
+    color: $color-icon;
+    font-weight: bolder;
+    width: 7em;
+    font-size: 0.6em;
+    @include tablet {
+      font-size: 0.8em;
+      width: 7em;
+    }
+
+    &:hover {
+      background-color: $color-hover;
+      transform: scale(1.05);
+    }
+  }
+
+  &__icon {
+    background-color: $color-secundary;
+    border-radius: 50%;
+    padding: 0.4rem;
+    border: 1px solid $color-icon;
+    color: $color-icon;
+
+    @include tablet {
+      position: fixed;
+      margin-top: -5em;
+      margin-left: 10em;
+      padding: 0.5rem;
+    }
+    &:hover {
+      background-color: $color-icon;
+    }
+  }
+}

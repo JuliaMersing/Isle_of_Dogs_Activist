@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import ls from "../services/LocalStorage";
-import "../stylesheet/app.scss";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../stylesheet/layout/form.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,36 +26,42 @@ const Login = () => {
       });
   };
   return (
-    <div className="App">
-      <h1>LOGIN PAGE </h1>
-      <label htmlFor="email">
-        Email
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />{" "}
-      </label>
-      <br /> <br />
-      <label htmlFor="password">
-        password
-        <input
-          type="text"
-          name="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />{" "}
-      </label>
-      <br /> <br />
-      <button type="button" onClick={saveData}>
-        Login
-      </button>
-    </div>
+    <>
+      <Link to="/">
+        <span className="form__icon">👈🏻</span>
+      </Link>
+      <div className="form">
+        <label htmlFor="email" className="form__label">
+          <input
+            className="form__input"
+            placeholder="Email"
+            type="text"
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />{" "}
+        </label>
+        <br /> <br />
+        <label htmlFor="password" className="form__label">
+          <input
+            className="form__input"
+            placeholder="Pasword"
+            type="text"
+            name="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />{" "}
+        </label>
+        <br /> <br />
+        <button className="form__button" type="button" onClick={saveData}>
+          Login
+        </button>
+      </div>
+    </>
   );
 };
 
