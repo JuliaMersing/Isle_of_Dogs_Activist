@@ -1,0 +1,52 @@
+@import "../core/_variables.scss";
+@import "../core/mixing.scss";
+@import "../core/_reset.scss";
+
+.footer {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $color-icon;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 1.3em;
+  @include tablet {
+    font-size: 1.6em;
+  }
+
+  &__small {
+    color: $color-icon;
+    margin: 20px;
+  }
+
+  &__logo {
+    height: 50px;
+    margin: 20px;
+    margin-top: 20px;
+    @include tablet {
+      height: 100px;
+      margin-top: 30px;
+    }
+  }
+
+  @keyframes beats {
+    from {
+      transform: none;
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  &__heart {
+    display: inline-block;
+    font-size: 20px;
+    animation: beats 0.5s infinite;
+    color: $color-hover;
+  }
+}

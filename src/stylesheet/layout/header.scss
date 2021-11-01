@@ -1,0 +1,33 @@
+@import "../core/_variables.scss";
+@import "../core/mixing.scss";
+@import "../core/_reset.scss";
+
+.header {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 4em;
+    margin-right: 1em;
+    @include tablet {
+      width: 7em;
+    }
+  }
+
+  &__title {
+    font-size: 2em;
+    margin-right: 25px;
+    color: $color-icon;
+    @include tablet {
+      font-size: 3em;
+    }
+    @include desktop {
+      font-size: 4em;
+    }
+  }
+}
