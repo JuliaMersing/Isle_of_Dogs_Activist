@@ -80,7 +80,7 @@ const SignUp = () => {
           />{" "}
         </label>
         <br /> <br />
-        <button className="form__button" type="button" onClick={saveData}>
+        <button className="form__button" type="submit" onClick={saveData}>
           Sign Up
         </button>
       </div>

@@ -57,7 +57,7 @@ const Login = () => {
           />{" "}
         </label>
         <br /> <br />
-        <button className="form__button" type="button" onClick={saveData}>
+        <button type="submit" className="form__button" onClick={saveData}>
           Login
         </button>
       </div>
