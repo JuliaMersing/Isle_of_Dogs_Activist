@@ -9,7 +9,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   function saveData() {
     let data = { name, surname, email, password };
-    fetch("http://51.38.51.187:5050/api/v1/auth/sign-up", {
+    fetch("https://51.38.51.187:5050/api/v1/auth/sign-up", {
       method: "POST",
       headers: {
         Accept: "application/json",

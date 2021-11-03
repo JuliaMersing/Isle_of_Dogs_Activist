@@ -1,6 +1,6 @@
 import ls from "./LocalStorage";
 
-const url = "http://51.38.51.187:5050/api/v1/users";
+const url = "https://51.38.51.187:5050/api/v1/users";
 
 const getApiData = () => {
   //Recuperar el codigo de autentificacion guardado en login
